@@ -91,6 +91,14 @@ then
  done
   
   # Create a violations report using sonarqube rules	
+  cd "${WORKSPACE}"
+	chmod 755 "${WORKSPACE}"/bin/xpathRulesChecker.sh
+
+	chmod 755 "${WORKSPACE}"/bin/publishCodeReviewReport.sh
+	chmod 755 "${WORKSPACE}"/bin/sonarScanner.sh
+	chmod 755 "${WORKSPACE}"/bin/gitPush.sh
+	chmod 755 "${WORKSPACE}"/bin/gitClone.sh
+	chmod 755 "${WORKSPACE}"/bin/gitRelease.sh
 	bin/xpathRulesChecker.sh baseFolder="${packageFolder}" > "${packageFolder}/ViolationsReport_${saveComponentId}.html"
 
 fi
